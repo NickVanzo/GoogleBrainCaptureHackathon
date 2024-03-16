@@ -2,7 +2,7 @@ import torch
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
-def plot_latent_pca(latent_pca, y_data, annotations, pca, first_index=0, second_index=1, title="Latent Space after PCA"):
+def plot_latent_pca(latent_pca, y_data, annotations, pca, first_index=0, second_index=1, title="Latent Space after PCA", s=None):
     fig, ax = plt.subplots(1, 2, figsize=(16, 3))
 
     # Generate a colormap that has as many colors as you have unique labels
@@ -17,7 +17,7 @@ def plot_latent_pca(latent_pca, y_data, annotations, pca, first_index=0, second_
     colors = [label_to_color[label.item()] for label in y_data.cpu()]
 
     # Plot the scatter plot
-    ax[0].scatter(latent_pca[:, first_index], latent_pca[:, second_index], c=colors)
+    ax[0].scatter(latent_pca[:, first_index], latent_pca[:, second_index], c=colors, s=s)
     ax[0].set_xlabel(f"Principal Component {first_index}")
     ax[0].set_ylabel(f"Principal Component {second_index}")
     ax[0].set_title(title)

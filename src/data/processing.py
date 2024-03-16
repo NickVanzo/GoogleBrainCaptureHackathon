@@ -71,6 +71,7 @@ def load_data_dict(data_folder_path: str, annotation_dict: dict, tmin: float = 0
             data_dict[subject][session_name] = {}
             
             edf_file_path = data_folder_path + subject + '/' + session
+            
             raw = get_raw(edf_file_path, filter=True)
 
             if labels:
