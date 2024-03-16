@@ -8,7 +8,7 @@ steps:
   # Deploy container image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'streamlit-app', '--image', 'europe-west1-docker.pkg.dev/medtech-hack24cop-46/hackathon/streamlit-app', '--region', 'us-central1']
+    args: ['run', 'deploy', 'streamlit-app', '--image', 'europe-west1-docker.pkg.dev/medtech-hack24cop-4046/hackathon/streamlit-app', '--region', 'us-central1']
 
 # Update the image field with your full image path
 images:
